@@ -1,0 +1,54 @@
+//dot-product-procedure
+PROCEDURE dot-product(VAR v1,v2 : ARRAY_OF INTEGER;)
+VAR
+    ps : INTEGER = 0;
+    i,j : INTEGER;
+BEGIN
+FOR i FROM 0 TO  v1.length-1  DO
+    FOR j FROM 0 TO v2.length-1  DO
+        ps := ps + v1[i]*v2[j];
+    END_FOR
+END_FOR
+END
+
+//orthogonal algorithme
+ALGORITHM orthogonal-vectors
+VAR
+    va,vb : ARRAY_OF INTEGER;
+    n : INTEGER;
+BEGIN
+WHILE (n > 0) DO
+    IF ((dot-product(va,vb)= 0 )) THEN
+    Write("the two vectors are orthogonal")
+    ELSE
+    Write("the two vectors are not orthogonal")
+    END_IF 
+END_WHILE   
+END
+//dot-product function
+FUNCTION dot-product-function(v1,v2 : ARRAY_OF INTEGER) : INTEGER
+VAR
+    ps : INTEGER = 0;
+    i,j : INTEGER;
+BEGIN
+FOR i FROM 0 TO max v1.length-1  DO
+    FOR j FROM 0 TO v2.length-1  DO
+        ps := ps + v1[i]*v2[j];
+    END_FOR
+END_FOR
+RETURN ps ;
+END 
+
+//orthogonal algorithme
+ALGORITHM orthogonal-vectors
+VAR
+    va,vb : ARRAY_OF INTEGER;
+    n : INTEGER;
+BEGIN
+FOR (n > 0)
+    IF ((dot-product_function(va,vb)= 0 )) THEN
+    Write("the two vectors are orthogonal")
+    ELSE
+    Write("the two vectors are not orthogonal")
+    END_IF 
+END_FOR 
